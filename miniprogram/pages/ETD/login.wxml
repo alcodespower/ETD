@@ -1,0 +1,3 @@
+<!--pages/ETD/login.wxml-->
+<import src="../../components/login-template" />
+<template is="login-template"  data="{{  kicon,bgimg,user_icon,pwd_icon,isShow,userName,userPassword,user_info  }}"/>

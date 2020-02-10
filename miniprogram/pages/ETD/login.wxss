@@ -1,0 +1,96 @@
+/* pages/ETD/login.wxss */
+
+.kbd{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1000;
+  opacity: 0.6;
+}
+.kicon{
+  display:flex;
+  justify-content: center; 
+}
+.kicon image{
+  width: 260rpx;
+  height: 260rpx;
+  margin-top: 32%;
+}
+.kuser{
+  width:100%;
+  height:38px;
+  display:inline-block;
+  border-top:1px solid #00000062;
+  border-bottom:1px solid #00000062;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  /* background:#fff; */
+}
+.kicon_user{
+  width:20%;
+  display:inline-block;
+  height:70%;
+  margin-bottom: 5px;
+}
+.kinput{
+  width:80%;
+  display:inline-block;
+  height:100%;
+  color: black;
+}
+.kpwd{
+  width:100%;
+  height:38px;
+  display:inline-block;
+  border-bottom:1px solid #00000062;
+  padding: 5px;
+  margin-bottom: 5px;
+  background:rgba(255, 255, 255,0.2);
+  margin-top:-5px;
+  /* border-top:1px solid #000000; */
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+}
+.kicon_user image{
+  height: 40%;
+  width: 40%;
+}
+.kmovetop{
+  margin-top: 100rpx;
+}
+.kbtn{
+  width: 60%;
+  border-radius: 50px;
+  background-color: rgba(95, 199, 247, 0.425);
+  top: 80px;
+}
+/* .Myanmiated{
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-iteration-count:infinite;
+} */
+.kshadow{
+  width:100%;   
+  height:100%;   
+  top:0;   
+  background:rgba(0, 0, 0, 0);   
+  overflow: hidden;   
+  /*要显示在wrap的上面 */   
+  z-index: 999;   
+  position: absolute;
+}
+page{
+  position: relative;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+.userError{
+    border-color:#b02923;
+}

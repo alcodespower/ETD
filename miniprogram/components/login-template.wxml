@@ -1,0 +1,39 @@
+<template name="login-template">
+<!-- 遮罩层 -->
+<view class="kshadow" style="display:{{  isShow  }}"></view>
+<!-- 背景图片 -->
+ <!-- <image class="kbd" src="{{  bgimg.pic1  }}" mode="aspectFill" /> -->
+  <image class="kbd animated flipInY" src="{{  bgimg.pic2  }}" mode="aspectFill" />
+<!-- page开始 -->
+  <view class="page animated bounceInUp">
+  <!-- band -->
+    <view class="page__hd kicon animated bounce delay-1s">
+      <image src="{{  kicon  }}" mode="aspectFit " />
+    </view>
+    <!-- 信息输入框 -->
+    <view class="page__bd kmovetop">
+      <view style='width:70%;margin-left:15%;'>
+      <!-- 学号 -->
+        <view class="kuser">
+          <view class="kicon_user">
+            <image src='{{  user_icon  }}' style='display:inline;' mode="aspectFit" />
+          </view>
+          <input class="kinput" placeholder-style='font-size:18px;'  placeholder='请输入您的学号' value='{{  userName  }}' maxlength="8" name='userName' bindinput='getUserName' />
+          <!-- style="background:{{ userName == '' ? 'rgba(255, 0, 0,0.5)' : 'rgba(255, 255, 255,0)'}}" -->
+        </view>
+        <!-- 密码 -->
+        <view class="kpwd">
+          <view class="kicon_user">
+            <image src='{{  pwd_icon  }}' style='display:inline' mode="aspectFit"/>
+          </view>
+          <input class="kinput" placeholder-style='font-size:18px;' type="password" placeholder='请输入您的密码'  name='userPassword' bindinput='getPassword'/>     
+        </view>
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="page__ft">
+      <button class="weui-btn kbtn animated wobble delay-2s"  bindtap="formSubmit">登录</button>
+    </view>
+  </view>
+</template>
+

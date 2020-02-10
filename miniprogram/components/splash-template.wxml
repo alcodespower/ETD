@@ -1,0 +1,7 @@
+<template name="splash-template">
+  <swiper style="height: 100%;width: 100%" indicator-dots autoplay circular vertical='{{  xTOy  }}'>
+    <swiper-item wx:for="{{  splash  }}" wx:key="{{  item.id  }}" style="flex: 1">
+      <image src="{{  item.src  }}" style="height: 100%;width: 100%" />
+    </swiper-item>
+  </swiper>
+</template>
