@@ -1,3 +1,4 @@
 <!--pages/ETD/splash.wxml-->
 <import src="../../components/splash-template" />
 <template is="splash-template" data="{{  splash,xTOy  }}" />
+

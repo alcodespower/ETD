@@ -18,7 +18,7 @@
 .kicon image{
   width: 260rpx;
   height: 260rpx;
-  margin-top: 32%;
+  margin-top: 45%;
 }
 .kuser{
   width:100%;

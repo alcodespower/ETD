@@ -16,6 +16,14 @@ Page({
       }],
       xTOy: false
   },
+  toIndex:function(){
+    wx.navigateTo({
+      url: '/pages/ETD/login',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -23,24 +31,23 @@ Page({
   onLoad: function (options) {
     let app = getApp()
 //获取缓存中的key
-wx.setStorage({
-  key: 'has_show_splash',
-  data: true
-})
+    wx.setStorage({
+      key: 'has_show_splash',
+      data: true
+    })
 //改变swiper的滑动方向
     setInterval(() => {
-      console.log('doSomething')
+      // console.log('doSomething')
       this.setData({
         xTOy: true
       })
-      console.log(this.data.xTOy)
     }, 10000);
     setInterval(() => {
-      console.log('doSomething')
+      // console.log('doSomething')
       this.setData({
         xTOy: false
       })
-      console.log(this.data.xTOy)
+      // console.log(this.data.xTOy)
     }, 20000);
     
   },

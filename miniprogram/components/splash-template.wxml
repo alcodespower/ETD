@@ -1,7 +1,13 @@
 <template name="splash-template">
+<!-- <cu-custom bgColor="none" isCustom="{{true}}">
+  <view slot="content">ETD</view>
+</cu-custom> -->
   <swiper style="height: 100%;width: 100%" indicator-dots autoplay circular vertical='{{  xTOy  }}'>
     <swiper-item wx:for="{{  splash  }}" wx:key="{{  item.id  }}" style="flex: 1">
       <image src="{{  item.src  }}" style="height: 100%;width: 100%" />
     </swiper-item>
   </swiper>
+  <view class="kbtn">
+    <button class="cu-btn lines-blue round lg shadow" bindtap="toIndex">开始我们的精彩校园</button>
+  </view>
 </template>

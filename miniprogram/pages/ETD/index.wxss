@@ -1,1 +1,23 @@
 /* pages/ETD/index.wxss */
+
+.page {
+  height: 100Vh;
+  width: 100vw;
+}
+.page .show {
+  overflow: hidden;
+}
+.kshadow{
+  width:100%;   
+  height:100%;   
+  top:0;   
+  background:rgba(0, 0, 0, 0);   
+  overflow: hidden;   
+  /*要显示在wrap的上面 */   
+  z-index: 1;   
+  position: absolute;
+}
+.kmodal{
+  height: 100Vh;
+  width: 100vw;
+}

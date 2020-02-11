@@ -1,1 +1,13 @@
 /* pages/ETD/splash.wxss */
+page{
+  position: relative;
+}
+.kbtn{
+  display:flex;
+  justify-content: center; 
+}
+.kbtn button{
+  position: absolute;
+  z-index: 9;
+  top: 75%;
+}

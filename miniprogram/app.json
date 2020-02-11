@@ -4,9 +4,6 @@
     "pages/ETD/index",
     "pages/ETD/splash",
     
-    
-    
-    
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -25,7 +22,11 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "ETD",
+    "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "./components/cu-custom/cu-custom"
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,2 +1,89 @@
 <!--pages/ETD/index.wxml-->
-<text>pages/ETD/index.wxml</text>
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}" enable-back-to-top>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">ETD</view>
+</cu-custom>
+<view class="kshadow" style="display:{{  isShow  }}"></view>
+<view class="animated bounceInUp">
+  <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="icon-title text-orange "></text> 功能
+    </view>
+    <view class="action">
+      <button class="cu-btn icon" bindtap="showModal" data-target="gridModal">
+        <text class="icon-clothes text-orange"></text>
+      </button>
+    </view>
+  </view>
+  <view class="cu-modal {{modalName=='gridModal'?'show':''}} kmodal" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <radio-group class="block" bindchange="gridchange">
+        <view class="cu-list menu text-left">
+          <view class="cu-item" wx:for="{{3}}" wx:key="index">
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{index +3}} 列</view>
+              <radio class="round" value="{{index +3}}" checked="{{gridCol==index+3}}"></radio>
+            </label>
+          </view>
+        </view>
+      </radio-group>
+      <view class="cu-list menu text-left solid-top">
+        <view class="cu-item">
+          <view class="content">
+            <text class="text-grey">边框</text>
+          </view>
+          <view class="action">
+            <switch bindchange="gridswitch" checked="{{  gridBorder  }}"></switch>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
+    <view class="cu-item" wx:for="{{  iconList  }}" wx:key="index" wx:if="{{index<gridCol}}">
+      <view class="icon-{{item.icon}} text-{{item.color}}">
+        <view class="cu-tag badge" wx:if="{{item.badge!=0}}">
+          <block wx:if="{{item.badge!=1}}">{{item.badge>99?"99+":item.badge}}</block>
+        </view>
+      </view>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class='action'>
+        <text class='icon-titles text-orange '></text> 实时要闻
+      </view>
+    </view>
+    <!-- 文章 -->
+    <block wx:for="{{  article  }}" wx:key="index">
+      <view class="cu-card article">
+        <view class="cu-item shadow">
+          <view class="title">
+            <view class="text-cut">{{ item.title}}</view>
+          </view>
+          <view class="content">
+            <image src="{{  item.imgUrl  }}" mode="aspectFill" />
+            <view class="desc">
+              <view class="text-content"> {{  item.content  }}</view>
+              <view>
+                <view class="cu-tag bg-red light sm round">{{  item.type_id__i  }}</view>
+                <view class="cu-tag bg-green light sm round">{{  item.type_id__ii  }}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+</scroll-view>
