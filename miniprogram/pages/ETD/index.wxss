@@ -1,6 +1,6 @@
 /* pages/ETD/index.wxss */
 
-.page {
+page {
   height: 100Vh;
   width: 100vw;
 }
@@ -21,3 +21,9 @@
   height: 100Vh;
   width: 100vw;
 }
+/* .kbar{
+  position: fixed;
+  z-index: 5;
+  bottom: -50rpx;
+  width: 100%;
+} */

@@ -1,7 +1,12 @@
 <!--pages/ETD/index.wxml-->
-<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}" enable-back-to-top>
-<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+<scroll-view scroll-y="{{  modalName==null  }}" class="page {{modalName!=null?'show':''}}" enable-back-to-top bindscrolltolower = "retrieve">
+<!-- <cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
   <view slot="content">ETD</view>
+</cu-custom> -->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">
+    <image src="cloud://functio-90c82c.6675-functio-90c82c-1258888338/ETD/img/ETD.png" mode="widthFix" alt="个人中心"> </image>
+  </view>
 </cu-custom>
 <view class="kshadow" style="display:{{  isShow  }}"></view>
 <view class="animated bounceInUp">
@@ -65,25 +70,57 @@
       </view>
     </view>
     <!-- 文章 -->
-    <block wx:for="{{  article  }}" wx:key="index">
-      <view class="cu-card article">
-        <view class="cu-item shadow">
-          <view class="title">
-            <view class="text-cut">{{ item.title}}</view>
-          </view>
-          <view class="content">
-            <image src="{{  item.imgUrl  }}" mode="aspectFill" />
-            <view class="desc">
-              <view class="text-content"> {{  item.content  }}</view>
-              <view>
-                <view class="cu-tag bg-red light sm round">{{  item.type_id__i  }}</view>
-                <view class="cu-tag bg-green light sm round">{{  item.type_id__ii  }}</view>
+    <view style="padding-bottom: 70rpx;">
+      <block wx:for="{{  artiList  }}" wx:key="index">
+        <view class="cu-card article">
+          <view class="cu-item shadow">
+            <view class="title">
+              <view class="text-cut">{{ item.title}}</view>
+            </view>
+            <view class="content">
+              <image src="{{  item.imgsrc  }}" mode="aspectFill" />
+              <view class="desc" >
+                <view class="text-content" > {{ item.digest }}</view>
+                <view>
+                  <view class="cu-tag bg-red light sm round">{{ item.source }}</view>
+                  <view class="cu-tag bg-green light sm round">{{ item.ptime }}</view>
+                </view>
               </view>
             </view>
           </view>
         </view>
+      </block>
+      <!-- <view class="weui-loadmore" wx:if="{{  total > page  }}"> -->
+      <view class="weui-loadmore" bindtap="retrieve" style="display:{{  isShow_load  }}">
+        <view class="weui-media-box__info">点击加载更多</view>
       </view>
-    </block>
+    </view>
   </view>
 </view>
+
+<view class="cu-bar tabbar bg-white foot">
+  <view class="action text-green">
+    <view class="icon-homefill"></view> 首页
+  </view>
+  <view class="action text-gray">
+    <view class="icon-similar"></view> 功能
+  </view>
+  <view class="action text-gray add-action">
+    <button class="cu-btn icon-add bg-green shadow"></button>
+    发布
+  </view>
+  <view class="action text-gray">
+    <view class="icon-card">
+      <view class="cu-tag badge">99+</view>
+    </view>
+    资料
+  </view>
+  <view class="action text-gray" bindtap="toPageMy">
+    <view class="icon-my">
+      <view class="cu-tag badge"></view>
+    </view>
+    我的
+  </view>
+</view>
+
 </scroll-view>

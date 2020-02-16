@@ -1,0 +1,30 @@
+/* pages/ETD/PageMy/index.wxss */
+page{
+  height: 100Vh;
+  /* overflow: hidden; */
+  box-sizing: border-box;  
+}
+.header_bg{
+  height: 30%;
+  padding-top: 10%;
+  /* background-image: url(https://6675-functio-90c82c-1258888338.tcb.qcloud.la/ETD/img/F2127BBCB35DACBBF308F072E705B99F.jpg?sign=467166a6950123fdaa0970585ac25d03&t=1581841306);
+  background-size: cover; */
+}
+
+.header_bg image{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  width: 100%;
+  z-index: -1000;
+  opacity: .8;
+}
+.taplink{
+  margin-bottom: 190rpx;
+}
+.school_info{
+  /* margin-left: 40rpx; */
+}

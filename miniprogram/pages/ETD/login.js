@@ -1,4 +1,5 @@
 // pages/ETD/login.js
+let app = getApp()
 Page({
 
   /**
@@ -7,7 +8,7 @@ Page({
   data: {
 
     kicon: 'cloud://functio-90c82c.6675-functio-90c82c-1258888338/ETD/img/login_icon.png',
-    bgimg:{
+    bgimg: {
       pic1: 'cloud://functio-90c82c.6675-functio-90c82c-1258888338/ETD/img/login_bg_1.jpg',
       pic2: 'cloud://functio-90c82c.6675-functio-90c82c-1258888338/ETD/img/login_bg_2.jpg'
     },
@@ -17,9 +18,12 @@ Page({
     userName: '',
     password: '',
     user_info: 0,
+    avatarUrl: '',
+    nickName: '',
+    getuserInfo: ''
   },
   // 开放注册
-  onAdd: function () {
+  onAdd: function() {
     const db = wx.cloud.database()
     db.collection('ETD_user_info').add({
       data: {
@@ -51,7 +55,7 @@ Page({
     })
   },
 
-  onQuery: function () {
+  onQuery: function() {
     const db = wx.cloud.database()
     // 查询当前用户所有的counters
     db.collection('ETD_user_info').where({
@@ -61,17 +65,17 @@ Page({
         // this.setData({
         //   queryResult: JSON.stringify(res.data, null, 2)
         // })
-        if (res.data != ''){
-          setTimeout( () => {
+        if (res.data != '') {
+          setTimeout(() => {
             wx.navigateTo({
               url: '/pages/ETD/index',
             })
-          },500)
+          }, 500)
           wx.showToast({
             title: '登录成功',
             icon: 'success'
           })
-        }else{
+        } else {
           console.log("请正确输入用户名和密码")
           // wx.showModal({
           //   title: '登录失败',
@@ -83,9 +87,9 @@ Page({
             title: '登录失败',
             icon: 'loading'
           })
-          setTimeout( () =>{
-              wx.hideToast()
-          },1500 )
+          setTimeout(() => {
+            wx.hideToast()
+          }, 1500)
         }
         console.log('查询成功: ', res.data)
       },
@@ -99,13 +103,13 @@ Page({
     })
   },
 
-  getUserName: function (e) {
+  getUserName: function(e) {
     this.setData({
       userName: e.detail.value
     })
   },
 
-  getPassword: function (e) {
+  getPassword: function(e) {
     this.setData({
       password: e.detail.value
     })
@@ -127,6 +131,24 @@ Page({
   //     }
   //   });
   // },
+  bindGetUserInfo: function(e) {
+    if (e.detail.userInfo) {
+     
+    } else {
+      //用户按了拒绝按钮
+      wx.showModal({
+        title: '警告',
+        content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',
+        showCancel: false,
+        confirmText: '返回授权',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击了“返回授权”')
+          }
+        }
+      })
+    }
+  },
 
   formSubmit: function(options) {
     // let that = this;
@@ -134,7 +156,7 @@ Page({
     let password = this.data.password;
     console.log(this.data.userName)
     console.log(this.data.password)
-    if (userName == '' || password == ''){
+    if (userName == '' || password == '') {
       console.log("请正确输入用户名和密码")
       wx.showModal({
         title: '登录失败',
@@ -142,7 +164,7 @@ Page({
         confirmColor: '#b02923',
         showCancel: false
       })
-    }else{
+    } else {
       wx.showToast({
         title: '登录中',
         icon: 'loading'
@@ -163,24 +185,24 @@ Page({
       this.onQuery()
       // 开放注册（注册关闭后请注掉该行代码以免造成数据库资源浪费）
       // this.onAdd()
-      
+
     }
-    },
+  },
 
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     // let app = getApp()
     // console.log(this.data.bgimg)
-
+    
     // 遮罩层
-    setTimeout( () => {
+    setTimeout(() => {
       this.setData({
         isShow: 'none'
       })
-    },1000)
+    }, 1000)
 
     // 本地缓存判断是否为第一次使用
     wx.getStorage({
@@ -193,7 +215,7 @@ Page({
     })
     wx.getStorage({
       key: 'userName',
-      success: ( (e) =>  {
+      success: ((e) => {
         this.setData({
           userName: e.data
         })
@@ -205,49 +227,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

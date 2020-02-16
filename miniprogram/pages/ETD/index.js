@@ -1,6 +1,13 @@
 const app = getApp();
 Page({
   data: {
+    digest:'',
+    isShow_load: 'block',
+    type: '	BA10TA81wangning',
+    page: 0,
+    size: 10,
+    total: 1,
+    artlist: [],
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     cardCur: 0,
@@ -10,31 +17,31 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+      url: 'http://www.nytdc.edu.cn/uploadfile/2019/1113/20191113101325632.png'
     }, {
       id: 1,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+        url: 'http://www.nytdc.edu.cn/uploadfile/2019/1113/20191113030127260.jpg',
     }, {
       id: 2,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+        url: 'http://www.nytdc.edu.cn/uploadfile/2019/0829/20190829041443565.png'
     }, {
       id: 3,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+        url: 'http://www.nytdc.edu.cn/uploadfile/2019/1111/20191111104358485.jpg'
     }, {
       id: 4,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
+        url: 'http://www.tdxy.com.cn/uploadfile/2015/0318/20150318031409504.jpg'
     }, {
       id: 5,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
+        url: 'http://www.nytdc.edu.cn/uploadfile/2017/1114/20171114083631805.png'
     }, {
       id: 6,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+        url: 'http://www.tdxy.com.cn/uploadfile/2014/0317/20140317101756814.jpg'
     }],
 
     iconList: [{
@@ -63,63 +70,6 @@ Page({
       badge: 0,
       name: '更多'
     }],
-    article: [{
-      title: "热点新闻1 无意者 烈火焚身;以正义的烈火拔出黑暗。",
-        imgUrl: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-        content: "内容1 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！",
-        type_id__i: "正义天使",
-        type_id__ii: "史诗",
-      },
-      {
-        title: "热点新闻2 无意者 烈火焚身;以正义的烈火拔出黑暗。",
-        imgUrl: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-        content: "内容1 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！",
-        type_id__i: "正义天使",
-        type_id__ii: "史诗",
-      },
-      {
-        title: "热点新闻3 无意者 烈火焚身;以正义的烈火拔出黑暗。",
-        imgUrl: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-        content: "内容15 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！",
-        type_id__i: "正义天使",
-        type_id__ii: "史诗",
-      },
-      {
-        title: "热点新闻4 无意者 烈火焚身;以正义的烈火拔出黑暗。",
-        imgUrl: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-        content: "54654645折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！",
-        type_id__i: "正义天使",
-        type_id__ii: "史诗",
-      },
-      {
-        title: "热点新闻5 无意者 烈火焚身;以正义的烈火拔出黑暗。",
-        imgUrl: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-        content: "546456折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！",
-        type_id__i: "正义天使",
-        type_id__ii: "史诗",
-      },
-      {
-        title: "热点新闻6 无意者 烈火焚身;以正义的烈火拔出黑暗。",
-        imgUrl: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-        content: "546546折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！",
-        type_id__i: "正义天使",
-        type_id__ii: "史诗",
-      },
-      {
-        title: "热点新闻7 无意者 烈火焚身;以正义的烈火拔出黑暗。",
-        imgUrl: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-        content: "5678987折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！",
-        type_id__i: "正义天使",
-        type_id__ii: "史诗",
-      },
-      {
-        title: "热点新闻8 无意者 烈火焚身;以正义的烈火拔出黑暗。",
-        imgUrl: "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-        content: "789656456折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！",
-        type_id__i: "正义天使",
-        type_id__ii: "史诗",
-      }
-    ]
   },
 
   showModal(e) {
@@ -172,11 +122,80 @@ Page({
       skin: e.detail.value
     });
   },
+  retrieve() {
+    let app = getApp()
+    let start = (this.data.page - 1) * this.data.size
+    wx.showToast({
+      title: '请稍等~',
+      image: '/images/logo.png',
+    })
+    // return app.request(`https://api.douban.com/v2/movie/${this.data.type}?start=${start}&count=${this.data.size}&apikey=0df993c66c0c636e29ecbb5344252a4a `)
+    return app.request(`https://3g.163.com/touch/reconstruct/article/list/${this.data.type}/${this.data.page}-${this.data.size}.html`)
+      .then(res => {
+        if (res) {
+          // res = JSON.stringify(res)
+          // res = JSON.parse(res)
+          res = res.substring(9, [res.length - 1]);
+          res = JSON.parse(res)
+          console.log(res)
+          this.setData({
+            artiList: res.BA10TA81wangning,
+            size: this.data.size + 10
+          })
+          let artiList = this.data.artiList.concat(res.BA10TA81wangning)
+          
+          console.log(this.data.artiList)
+          console.log(this.data.size)
+          // if (res.subjects.length) {
+          // let movies = this.data.movies.concat(res.subjects)
+          // let total = Math.floor(res.total / this.data.size)
+          // this.setData({
+          //   movies: movies,
+          //   total: total,
+          //   page: this.data.page
+          // })
+          // wx.setNavigationBarTitle({
+          //   title: res.title,
+          // })
+          // console.log(movies)
+        }else{
+          this.setData({
+            isShow_load: 'none'
+          })
+          wx.showToast({
+            title: '暂无更多',
+            image: '/images/logo.png',
+            duration: 1000
+          })
+          setTimeout(function () {
+            wx.hideLoading()
+          }, 3000);
+        }
+      }).catch(err => {
+        console.error(err)
+      }).finally(() => {
+        // wx.hideLoading()
+      })
+      
+  },
+
 
 
 
 
   onLoad() {
+    this.retrieve()
+    // console.log(this.data.artiList.digest)
+    // if (!this.data.artiList.digest) {
+    //   this.setData({
+    //     digest: '暂无内容'
+    //   })
+    // } else {
+    //   this.setData({
+    //     digest: this.data.artiList.digest
+    //   })
+    // }
+    // console.log(this.data.digest)
     // 遮罩层
     setTimeout(() => {
       this.setData({
@@ -207,7 +226,7 @@ Page({
     this.setData({
       cardCur: e.detail.current
     })
-    console.log(e)
+    // console.log(e)
   },
   // towerSwiper
   // 初始化towerSwiper
@@ -262,6 +281,31 @@ Page({
         swiperList: list
       })
     }
+  },
+  toPageMy: function() {
+    wx.navigateTo({
+      url: '/pages/ETD/PageMy/index',
+    })
+  },
+  toPageIndex: function() {
+    wx.navigateTo({
+      url: '/pages/ETD/index',
+    })
+  },
+  toPageFunc: function() {
+    wx.navigateTo({
+      url: '/pages/ETD/PageMy/index',
+    })
+  },
+  toPageAdd: function() {
+    wx.navigateTo({
+      url: '/pages/ETD/PageMy/index',
+    })
+  },
+  toPageData: function() {
+    wx.navigateTo({
+      url: '/pages/ETD/PageMy/index',
+    })
   }
 
 })
