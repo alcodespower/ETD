@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/ETD/passing",
+    "pages/ETD/PageMy/index",
     "pages/ETD/login",
     "pages/ETD/index",
-    "pages/ETD/PageMy/index",
+    
     
     
     

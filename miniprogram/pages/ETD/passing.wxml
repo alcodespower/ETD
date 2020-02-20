@@ -1,0 +1,8 @@
+<!--pages/ETD/passing.wxml-->
+<image src="cloud://functio-90c82c.6675-functio-90c82c-1258888338/ETD/img/face.png" style="height: 100%;width: 100%"></image>
+<view class="shadow">
+<view class="logo-mian">
+  <image class="animated wobble delay-2s" src="cloud://functio-90c82c.6675-functio-90c82c-1258888338/ETD/img/logo2_ETD.png" mode="aspectFit" />
+</view>
+  <view class="k-btn shadow animated bounceOutRight delay-2s " bindtap="{{  toLogin  }}">跳过 > </view>
+</view>

@@ -7,8 +7,7 @@
     <image src="cloud://functio-90c82c.6675-functio-90c82c-1258888338/ETD/img/PageMy__title__a.png" mode="widthFix" alt="个人中心"> </image>
   </view>
 </cu-custom>
-<image style="position: fixed;left: 0;top: 0;right: 0;bottom: 0;height: 100%;width: 100%;z-index: -1000;opacity: 0.1;" src="https://edu-wps.ks3-cn-beijing.ksyun.com/image/9a2f191e62c28997fcb0301b7b67aa7c.png" mode="aspectFill" />
-<!-- https://edu-wps.ks3-cn-beijing.ksyun.com/image/9a2f191e62c28997fcb0301b7b67aa7c.png -->
+<image style="position: fixed;left: 0;top: 0;right: 0;bottom: 0;height: 100%;width: 100%;z-index: -1000;opacity: 0.1;" src="{{  saying.imgurl  }}" mode="aspectFill" />
 <view class="header_bg text-center">
   <view>
     <image class="bg_img" src="https://6675-functio-90c82c-1258888338.tcb.qcloud.la/ETD/img/F2127BBCB35DACBBF308F072E705B99F.jpg?sign=467166a6950123fdaa0970585ac25d03&t=1581841306" mode="aspectFill" />
@@ -18,7 +17,6 @@
   </view>
   <view class="text-bold margin-top">{{ userInfo.nickName }}</view>
   <view class="school_info margin-top text-bold">
-    <view>学制：暂未获取</view>
     <view>专业：暂未获取</view>
     <view>周次：暂未获取</view>
   </view>
